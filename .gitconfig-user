@@ -1,15 +1,15 @@
 [user]
 	# Name used in commit messages.
-	name = Rahul Somasunderam
+	name = Yuan Yao
 	# Email used in commit messages.
-	email = rahul.som@gmail.com
+	email = patrickyyao@gmail.com
 [shell]
 	# Default SSH username.
 	#username = mike
 [github]
 	# GitHub username for command-line tools.
-	user = rahulsom
+	user = patrickyao1988
 [alias]
 	# Push the current branch upstream to rahulsom using the same
 	# branch name for the remote branch.
-	um = !git push --set-upstream rahulsom $(git current-branch)
+	# um = !git push --set-upstream rahulsom $(git current-branch)
