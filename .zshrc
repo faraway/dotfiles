@@ -45,16 +45,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow osx grails brew jira mvn gradle themes)
+plugins=(git github git-flow osx grails brew jira mvn gradle themes)
 
 source $ZSH/oh-my-zsh.sh
 [[ -s "/opt/boxen/env.sh" ]] && source /opt/boxen/env.sh
-
-# User configuration
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export GREP_OPTIONS="--color=auto"
-export GREP_COLOR='1;35;40'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -91,5 +85,18 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# User configuration
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
+export GREP_OPTIONS="--color=auto"
+export GREP_COLOR='1;35;40'
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.goenv/bin:$PATH"
+if which goenv  > /dev/null; then eval "$(goenv init -)";  fi
+if which rbenv  > /dev/null; then eval "$(rbenv init -)";  fi
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+if which pyenv  > /dev/null; then eval "$(pyenv init -)";  fi

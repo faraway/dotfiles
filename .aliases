@@ -141,4 +141,18 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 # Faster npm for Europeans
-command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
+#command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
+
+# Open in Intellij
+alias idea='ls /Applications/ | grep .app$ | grep "IntelliJ" | sed -e "s/\.app//g"'
+
+# Create a new slidedeck using lazybones+asciidoctor+revealjs+gradle
+alias slidedeck='lazybones create asciidoctor-revealjs'
+alias decktape='~/src/decktape/bin/phantomjs ~/src/decktape/decktape.js'
+
+# Report on wifi
+alias wifi='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s'
+
+alias ad='asciidoctor -r asciidoctor-diagram'
+
+alias gig='groovy -Dgroovy.grape.report.downloads=true -Divy.message.logger.level=4'
